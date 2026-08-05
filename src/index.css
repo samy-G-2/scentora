@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8D48B;
+  --color-gold-dark: #B8960C;
+  --color-navy: #081C3A;
+  --color-navy-light: #0F2D5C;
+  --color-navy-dark: #040E1D;
+  --color-cream: #FDFCFA;
+  --color-cream-dark: #F5F2ED;
+  --color-primary: #081C3A;
+  --color-accent: #D4AF37;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    font-family: "Inter", sans-serif;
+    @apply antialiased bg-cream text-navy;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: #D4AF3725;
+    color: #081C3A;
+  }
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D4AF3730; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #D4AF3770; }
+
+@keyframes wa-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.4); }
+  50% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+}
+.whatsapp-pulse { animation: wa-pulse 2.4s ease-in-out infinite; }
+
+.product-card:hover .product-image { transform: scale(1.06); }
+.product-card:hover .card-actions { opacity: 1; transform: translateY(0); }
+
+.glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+@keyframes shimmer-gold {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.text-shimmer {
+  background: linear-gradient(90deg, #D4AF37, #E8D48B 40%, #D4AF37 60%, #E8D48B);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-gold 5s linear infinite;
+}
+
+*:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF3740, transparent);
+}
