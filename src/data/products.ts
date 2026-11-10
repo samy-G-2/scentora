@@ -30,6 +30,7 @@ export interface Product {
 }
 
 export const collections = [
+  { id: 'nouveautes', label: '✨ Nouveautés', icon: '✨', filter: (p: Product) => p.badge?.includes('Nouveau') ?? false },
   { id: 'ete', label: '☀️ Parfums d\'été', icon: '☀️', filter: (p: Product) => p.season.includes('Été') && p.category !== 'coffret' },
   { id: 'hiver', label: '❄️ Parfums d\'hiver', icon: '❄️', filter: (p: Product) => p.season.includes('Hiver') && !p.season.includes('Été') && p.category !== 'coffret' },
   { id: 'soiree', label: '🌙 Soirée', icon: '🌙', filter: (p: Product) => p.occasion.includes('Soirée') && p.category !== 'coffret' },
@@ -41,9 +42,11 @@ export const collections = [
 ];
 
 export const inspirationMap: Record<string, { ids: number[]; label: string }> = {
+  "Kilian Angels' Share": { ids: [1, 21], label: "Khamrah et Khamrah Qahwa partagent cette gourmandise épicée, ambrée et addictive" },
   'Dior Sauvage Elixir': { ids: [2], label: 'Asad offre la même puissance épicée-boisée à un prix 5x inférieur' },
-  'Baccarat Rouge 540': { ids: [1, 9], label: 'Khamrah et Raghba partagent cette douceur ambrée-vanillée caractéristique' },
   'Creed Aventus': { ids: [4, 11], label: 'Club de Nuit Intense et Supremacy Silver capturent cet ADN fruité-boisé' },
+  'Nishane Hacivat': { ids: [26], label: "Supremacy Not Only Intense reproduit ce chef-d'œuvre boisé-fruité avec une tenue record" },
+  'Initio Oud for Greatness': { ids: [25], label: "Bade'e Al Oud for Glory offre ce même oud safrané et majestueux" },
   'JPG Ultra Male': { ids: [3], label: '9PM reproduit fidèlement ce mélange lavande-cannelle-vanille addictif' },
   'Invictus Aqua': { ids: [5], label: 'Hawas offre cette fraîcheur aquatique puissante avec une tenue supérieure' },
   'YSL Libre': { ids: [6, 8], label: 'Yara et Ajwad Pink to Pink partagent cette élégance florale-gourmande' },
@@ -74,6 +77,9 @@ export const products: Product[] = [
     season: ["Automne", "Hiver"],
     occasion: ["Soirée", "Rendez-vous", "Occasion spéciale"],
     family: "Oriental Gourmand",
+    targetAge: "25-45",
+    style: ["Sensuel", "Gourmand", "Soirée"],
+    inspiredBy: "Kilian Angels' Share",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Khamrah-75805.html"
   },
   {
@@ -99,6 +105,9 @@ export const products: Product[] = [
     season: ["Automne", "Hiver"],
     occasion: ["Soirée", "Rendez-vous", "Quotidien"],
     family: "Oriental Boisé",
+    targetAge: "25-45",
+    style: ["Sombre", "Épicé", "Charismatique"],
+    inspiredBy: "Dior Sauvage Elixir",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Asad-72821.html"
   },
   {
@@ -124,6 +133,9 @@ export const products: Product[] = [
     season: ["Automne", "Hiver", "Printemps"],
     occasion: ["Soirée", "Rendez-vous", "Club"],
     family: "Oriental Épicé",
+    targetAge: "20-35",
+    style: ["Séducteur", "Festif", "Vanillé"],
+    inspiredBy: "JPG Ultra Male",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Afnan/9pm-65414.html"
   },
   {
@@ -149,6 +161,9 @@ export const products: Product[] = [
     season: ["Printemps", "Été", "Automne"],
     occasion: ["Quotidien", "Bureau", "Soirée", "Rendez-vous"],
     family: "Boisé Fruité",
+    targetAge: "20-45",
+    style: ["Fruité", "Polyvalent", "Performant"],
+    inspiredBy: "Creed Aventus",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Armaf/Club-de-Nuit-Intense-Man-34696.html"
   },
   {
@@ -174,6 +189,9 @@ export const products: Product[] = [
     season: ["Printemps", "Été"],
     occasion: ["Quotidien", "Plage", "Sport", "Rendez-vous"],
     family: "Aquatique Oriental",
+    targetAge: "20-40",
+    style: ["Frais", "Sportif", "Aquatique"],
+    inspiredBy: "Paco Rabanne Invictus Aqua",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Rasasi/Hawas-for-Him-46890.html"
   },
   {
@@ -199,6 +217,8 @@ export const products: Product[] = [
     season: ["Printemps", "Été", "Automne"],
     occasion: ["Quotidien", "Bureau", "Brunch", "Rendez-vous"],
     family: "Floral Gourmand",
+    targetAge: "18-35",
+    style: ["Doux", "Féminin", "Quotidien"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Yara-76880.html"
   },
   {
@@ -212,7 +232,7 @@ export const products: Product[] = [
     badge: "Exclusif 💎",
     description: "L'oud dans toute sa noblesse. Ce parfum d'exception marie la rose bulgare au safran et au bois d'agar, créant une symphonie olfactive riche et envoûtante.",
     notes: {
-      top: ["Bergamote", "Poivre rose"],
+      top: ["Safran", "Bergamote", "Poivre rose"],
       heart: ["Rose bulgare", "Rose turque", "Jasmin"],
       base: ["Ambre", "Vanille", "Bois d'agar (Oud)", "Musc"]
     },
@@ -224,6 +244,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver"],
     occasion: ["Soirée", "Occasion spéciale", "Mariage"],
     family: "Oriental Oud",
+    targetAge: "25-50",
+    style: ["Noble", "Oriental", "Occasion"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Bade-e-Al-Oud-Amethyst-68214.html"
   },
   {
@@ -249,6 +271,8 @@ export const products: Product[] = [
     season: ["Printemps", "Été"],
     occasion: ["Quotidien", "Bureau", "Brunch", "Mariage"],
     family: "Floral Fruité",
+    targetAge: "18-35",
+    style: ["Romantique", "Fruité", "Lumineux"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Ajwad-Pink-to-Pink-89766.html"
   },
   {
@@ -274,6 +298,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver"],
     occasion: ["Soirée", "Quotidien", "Prière"],
     family: "Ambre Vanillé",
+    targetAge: "25-50",
+    style: ["Gourmand", "Enveloppant", "Oriental"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Raghba-25807.html"
   },
   {
@@ -299,6 +325,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver"],
     occasion: ["Soirée", "Occasion spéciale", "Prière"],
     family: "Oriental Boisé",
+    targetAge: "30-55",
+    style: ["Noble", "Boisé", "Prière"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Oud-Mood-46814.html"
   },
   {
@@ -324,6 +352,9 @@ export const products: Product[] = [
     season: ["Printemps", "Été", "Automne"],
     occasion: ["Quotidien", "Bureau", "Rendez-vous"],
     family: "Boisé Fruité",
+    targetAge: "20-45",
+    style: ["Fruité", "Élégant", "Bureau"],
+    inspiredBy: "Creed Aventus",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Afnan/Supremacy-Silver-27352.html"
   },
   {
@@ -349,6 +380,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver", "Printemps"],
     occasion: ["Rendez-vous", "Soirée", "Occasion spéciale"],
     family: "Floral Oriental",
+    targetAge: "20-40",
+    style: ["Audacieux", "Floral", "Soirée"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Lattafa-Perfumes/Ana-Abiyedh-Rouge-63062.html"
   },
   {
@@ -374,6 +407,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver", "Printemps"],
     occasion: ["Soirée", "Rendez-vous", "Occasion spéciale"],
     family: "Oriental Floral",
+    targetAge: "25-45",
+    style: ["Oriental", "Sensuel", "Soirée"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Asdaaf/Ameerat-Al-Arab-81376.html"
   },
   {
@@ -399,6 +434,9 @@ export const products: Product[] = [
     season: ["Printemps", "Été", "Automne"],
     occasion: ["Quotidien", "Rendez-vous", "Mariage"],
     family: "Floral Rose",
+    targetAge: "20-40",
+    style: ["Romantique", "Rosé", "Mariage"],
+    inspiredBy: "Parfums de Marly Delina",
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Asdaaf/Ameerat-Al-Arab-Prive-Rose-81967.html"
   },
   {
@@ -424,6 +462,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver", "Printemps"],
     occasion: ["Quotidien", "Soirée", "Bureau"],
     family: "Fruité Oriental",
+    targetAge: "20-40",
+    style: ["Moderne", "Fruité", "Polyvalent"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Asdaaf/Al-Andaleeb-70700.html"
   },
   {
@@ -449,6 +489,8 @@ export const products: Product[] = [
     season: ["Automne", "Hiver"],
     occasion: ["Soirée", "Occasion spéciale", "Prière"],
     family: "Oriental Boisé",
+    targetAge: "25-50",
+    style: ["Royal", "Puissant", "Occasion"],
     fragranticaUrl: "https://www.fragrantica.fr/parfum/Asdaaf/Ameer-Al-Arab-105834.html"
   },
   {
@@ -473,7 +515,9 @@ export const products: Product[] = [
     intensity: "Forte",
     season: ["Printemps", "Été", "Automne", "Hiver"],
     occasion: ["Cadeau", "Découverte", "Voyage"],
-    family: "Collection Mixte"
+    family: "Collection Mixte",
+    targetAge: "Tous âges",
+    style: ["Découverte", "Cadeau", "Voyage"],
   },
   {
     id: 18,
@@ -497,7 +541,9 @@ export const products: Product[] = [
     intensity: "Forte",
     season: ["Printemps", "Été", "Automne", "Hiver"],
     occasion: ["Cadeau", "Mariage", "Occasion spéciale"],
-    family: "Collection Oriental"
+    family: "Collection Oriental",
+    targetAge: "Tous âges",
+    style: ["Prestige", "Cadeau", "Collection"],
   },
   {
     id: 19,
@@ -521,7 +567,9 @@ export const products: Product[] = [
     intensity: "Très Forte",
     season: ["Printemps", "Été", "Automne", "Hiver"],
     occasion: ["Cadeau", "Découverte", "Occasion spéciale"],
-    family: "Collection Boisé"
+    family: "Collection Boisé",
+    targetAge: "Tous âges",
+    style: ["Cadeau", "Découverte", "Homme"],
   },
   {
     id: 20,
@@ -545,6 +593,219 @@ export const products: Product[] = [
     intensity: "Modérée",
     season: ["Printemps", "Été", "Automne"],
     occasion: ["Cadeau", "Mariage", "Anniversaire"],
-    family: "Floral Gourmand"
+    family: "Floral Gourmand",
+    targetAge: "Tous âges",
+    style: ["Cadeau", "Féminin", "Prestige"],
+  },
+  {
+    id: 21,
+    name: "Khamrah Qahwa",
+    brand: "Lattafa",
+    price: 8900,
+    oldPrice: 10500,
+    image: "/images/products/khamrah-qahwa.jpg",
+    category: "unisex",
+    badge: "Nouveau ☕",
+    description: "La version caféinée du best-seller absolu de Lattafa. Khamrah Qahwa s'ouvre sur un festival d'épices — café torréfié, cannelle, cardamome, gingembre — avant de fondre dans un cœur de dattes et de praline. Le fond vanille, tonka, benjoin et myrrhe tient la peau plus de 10 heures. Un gourmand oriental addictif, taillé pour les soirées fraîches.",
+    notes: {
+      top: ["Café", "Cannelle", "Cardamome", "Gingembre"],
+      heart: ["Dattes", "Praline", "Fleur d'oranger"],
+      base: ["Vanille", "Fève tonka", "Benjoin", "Ambre", "Myrrhe"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "100 ML",
+    sillage: 5,
+    longevity: 11,
+    intensity: "Très Forte",
+    season: ["Automne", "Hiver"],
+    occasion: ["Soirée", "Rendez-vous", "Occasion spéciale"],
+    family: "Oriental Gourmand",
+    targetAge: "25-45",
+    style: ["Caféiné", "Gourmand", "Chaleureux"],
+    inspiredBy: "Kilian Angels' Share"
+  },
+  {
+    id: 22,
+    name: "Fakhar Black",
+    brand: "Lattafa",
+    price: 5900,
+    oldPrice: 6900,
+    image: "/images/products/fakhar-black.jpg",
+    category: "homme",
+    badge: "Nouveau 🖤",
+    description: "La fraîcheur élégante signée Lattafa. Fakhar Black ouvre sur la bergamote et la lavande, déploie un cœur aromatique de géranium et de sauge, puis se pose sur un fond de patchouli, mousse de chêne et vanille. Le parfum du quotidien par excellence : propre, raffiné, jamais envahissant.",
+    notes: {
+      top: ["Bergamote", "Lavande", "Cardamome"],
+      heart: ["Géranium", "Jasmin", "Sauge"],
+      base: ["Patchouli", "Mousse de chêne", "Vanille", "Ambre"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "100 ML",
+    sillage: 3,
+    longevity: 7,
+    intensity: "Modérée",
+    season: ["Printemps", "Été", "Automne"],
+    occasion: ["Bureau", "Quotidien", "Rendez-vous"],
+    family: "Aromatique Fougère",
+    targetAge: "20-40",
+    style: ["Propre", "Élégant", "Bureau"]
+  },
+  {
+    id: 23,
+    name: "Fakhar Rose",
+    brand: "Lattafa",
+    price: 5900,
+    oldPrice: 6900,
+    image: "/images/products/fakhar-rose.jpg",
+    category: "femme",
+    badge: "Nouveau 🌹",
+    description: "Un écrin rose poudré pour un floral fruité lumineux. Fakhar Rose marie le litchi et la rose en ouverture, s'épanouit sur la pivoine et la fleur d'oranger, puis s'apaise sur un fond de musc blanc, santal et vanille. Une féminité douce et raffinée, parfaite du matin au soir.",
+    notes: {
+      top: ["Rose", "Litchi", "Bergamote"],
+      heart: ["Pivoine", "Jasmin", "Fleur d'oranger"],
+      base: ["Musc blanc", "Bois de santal", "Vanille"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "100 ML",
+    sillage: 3,
+    longevity: 8,
+    intensity: "Modérée",
+    season: ["Printemps", "Été", "Automne"],
+    occasion: ["Quotidien", "Brunch", "Mariage", "Rendez-vous"],
+    family: "Floral Fruité",
+    targetAge: "18-35",
+    style: ["Romantique", "Rosé", "Lumineux"]
+  },
+  {
+    id: 24,
+    name: "Yara Moi",
+    brand: "Lattafa",
+    price: 6900,
+    oldPrice: 8200,
+    image: "/images/products/yara-moi.jpg",
+    category: "femme",
+    badge: "Nouveau 🤍",
+    description: "La sœur lumineuse de Yara. Yara Moi s'ouvre sur la poire et le poivre rose, dévoile un cœur de jasmin, fleur d'oranger et ylang-ylang, puis se referme sur une base crémeuse de vanille, santal et musc. Un floral gourmand moderne, à la fois frais et enveloppant.",
+    notes: {
+      top: ["Poire", "Bergamote", "Poivre rose"],
+      heart: ["Jasmin", "Fleur d'oranger", "Ylang-ylang"],
+      base: ["Vanille", "Bois de santal", "Musc", "Ambre"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "100 ML",
+    sillage: 4,
+    longevity: 9,
+    intensity: "Forte",
+    season: ["Printemps", "Automne", "Hiver"],
+    occasion: ["Quotidien", "Bureau", "Rendez-vous"],
+    family: "Floral Gourmand",
+    targetAge: "18-35",
+    style: ["Doux", "Crémeux", "Féminin"]
+  },
+  {
+    id: 25,
+    name: "Bade'e Al Oud Oud for Glory",
+    brand: "Lattafa",
+    price: 7900,
+    oldPrice: 9500,
+    image: "/images/products/oud-for-glory.jpg",
+    category: "unisex",
+    badge: "Nouveau 🖤",
+    description: "L'oud dans sa version la plus majestueuse. Oud for Glory ouvre sur un safran épicé et muscadé, rejoint par la lavande, puis libère un cœur d'oud et de patchouli sur un fond d'ambre et de musc. Une signature orientale profonde, à réserver aux grandes occasions.",
+    notes: {
+      top: ["Safran", "Noix de muscade", "Lavande"],
+      heart: ["Oud", "Patchouli", "Rose"],
+      base: ["Oud", "Ambre", "Musc", "Bois de santal"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "100 ML",
+    sillage: 5,
+    longevity: 10,
+    intensity: "Bête de Sillage",
+    season: ["Automne", "Hiver"],
+    occasion: ["Soirée", "Occasion spéciale", "Prière"],
+    family: "Oriental Oud",
+    targetAge: "25-50",
+    style: ["Puissant", "Oud", "Prestige"],
+    inspiredBy: "Initio Oud for Greatness"
+  },
+  {
+    id: 26,
+    name: "Supremacy Not Only Intense",
+    brand: "Afnan",
+    price: 9500,
+    oldPrice: 11000,
+    image: "/images/products/supremacy-not-only-intense.jpg",
+    category: "homme",
+    badge: "Nouveau 👑",
+    description: "Le sommet de la collection Supremacy. Un ananas et un cassis éclatants ouvrent le bal, un cœur de bouleau, patchouli et jasmin apporte la profondeur, puis un fond de mousse de chêne, ambre gris et vanille assure une tenue spectaculaire. Élégant, fruité, puissant : une signature immédiatement reconnaissable.",
+    notes: {
+      top: ["Ananas", "Bergamote", "Cassis"],
+      heart: ["Bouleau", "Patchouli", "Jasmin"],
+      base: ["Mousse de chêne", "Ambre gris", "Musc", "Vanille"]
+    },
+    concentration: "Extrait de Parfum",
+    volume: "100 ML",
+    sillage: 5,
+    longevity: 10,
+    intensity: "Très Forte",
+    season: ["Printemps", "Été", "Automne"],
+    occasion: ["Soirée", "Bureau", "Rendez-vous"],
+    family: "Boisé Fruité",
+    targetAge: "20-45",
+    style: ["Fruité", "Puissant", "Signature"],
+    inspiredBy: "Nishane Hacivat"
+  },
+  {
+    id: 27,
+    name: "Amber Oud Gold Edition",
+    brand: "Al Haramain",
+    price: 9800,
+    oldPrice: 11500,
+    image: "/images/products/amber-oud-gold.jpg",
+    category: "unisex",
+    badge: "Nouveau ✨",
+    description: "L'or liquide d'Al Haramain. Amber Oud Gold Edition mêle un ananas juteux et une bergamote pétillante à un cœur d'oud, de rose et de jasmin, avant de se lover dans un fond d'ambre, de vanille et de santal. Riche, lumineux, inoubliable.",
+    notes: {
+      top: ["Bergamote", "Ananas", "Pomme"],
+      heart: ["Oud", "Rose", "Jasmin", "Ambre"],
+      base: ["Musc", "Vanille", "Bois de santal", "Ambre gris"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "60 ML",
+    sillage: 4,
+    longevity: 9,
+    intensity: "Forte",
+    season: ["Automne", "Hiver", "Printemps"],
+    occasion: ["Soirée", "Occasion spéciale", "Rendez-vous"],
+    family: "Oriental Ambré",
+    targetAge: "25-50",
+    style: ["Ambré", "Sucré", "Prestige"]
+  },
+  {
+    id: 28,
+    name: "Asad Zanzibar",
+    brand: "Lattafa",
+    price: 7400,
+    oldPrice: 8800,
+    image: "/images/products/asad-zanzibar.jpg",
+    category: "homme",
+    badge: "Nouveau 🔥",
+    description: "Asad Zanzibar, c'est l'évasion tropicale du lion de Lattafa. Ananas et poivre noir en ouverture, un cœur de lavande, noix de coco et iris, puis un fond vanille, tonka et ambre. Un boisé gourmand solaire, aussi à l'aise en soirée qu'au quotidien.",
+    notes: {
+      top: ["Ananas", "Bergamote", "Poivre noir"],
+      heart: ["Lavande", "Noix de coco", "Iris"],
+      base: ["Vanille", "Fève tonka", "Ambre", "Musc"]
+    },
+    concentration: "Eau de Parfum",
+    volume: "100 ML",
+    sillage: 4,
+    longevity: 9,
+    intensity: "Forte",
+    season: ["Automne", "Hiver", "Printemps"],
+    occasion: ["Soirée", "Rendez-vous", "Quotidien"],
+    family: "Oriental Boisé",
+    targetAge: "20-40",
+    style: ["Sucré", "Boisé", "Séducteur"]
   }
 ];

@@ -6,6 +6,7 @@ import type { Product } from '../data/products';
 
 const categories = [
   { id: 'all', label: 'Tous', icon: '🛍️' },
+  { id: 'nouveautes', label: 'Nouveautés', icon: '✨' },
   { id: 'bestseller', label: 'Best-Sellers', icon: '🔥' },
   { id: 'homme', label: 'Homme', icon: '👨' },
   { id: 'femme', label: 'Femme', icon: '👩' },
@@ -23,6 +24,7 @@ const ProductGrid = ({ onAddToCart }: ProductGridProps) => {
 
   const filteredProducts = products.filter((p) => {
     if (activeCategory === 'all') return true;
+    if (activeCategory === 'nouveautes') return p.badge?.includes('Nouveau') ?? false;
     if (activeCategory === 'bestseller') return p.badge?.includes('Best-Seller');
     return p.category === activeCategory;
   });
@@ -41,6 +43,9 @@ const ProductGrid = ({ onAddToCart }: ProductGridProps) => {
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
               Cliquez sur un parfum pour découvrir ses notes olfactives, sa puissance et la saison recommandée.
+            </p>
+            <p className="text-gold text-xs font-semibold uppercase tracking-wider mt-3">
+              {filteredProducts.length} parfum{filteredProducts.length > 1 ? 's' : ''} disponible{filteredProducts.length > 1 ? 's' : ''}
             </p>
           </div>
 

@@ -30,6 +30,15 @@ const slides = [
     price: "6 500",
     brand: "Afnan",
   },
+  {
+    id: 4,
+    title: "Khamrah Qahwa",
+    subtitle: "Nouveauté — café, dattes et vanille",
+    description: "Le best-seller Khamrah revisité avec un café torréfié et des épices chaudes. Une gourmandise orientale irrésistible.",
+    image: "/images/products/khamrah-qahwa.jpg",
+    price: "8 900",
+    brand: "Lattafa",
+  },
 ];
 
 const HeroSlider = () => {

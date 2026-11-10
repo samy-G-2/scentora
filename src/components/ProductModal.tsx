@@ -89,7 +89,32 @@ const ProductModal = ({ product, onClose, onAddToCart }: ProductModalProps) => {
             </div>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">{product.description}</p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-5">{product.description}</p>
+
+            {/* Inspiration & profil */}
+            {product.inspiredBy && (
+              <div className="flex items-start gap-2.5 mb-5 px-3.5 py-3 bg-gold/5 border border-gold/25 rounded-xl">
+                <span className="text-base leading-none mt-0.5">✨</span>
+                <p className="text-xs text-navy/70 leading-relaxed">
+                  Même ADN olfactif que <strong className="text-navy">{product.inspiredBy}</strong> — à une fraction du prix.
+                </p>
+              </div>
+            )}
+
+            {(product.targetAge || product.style?.length) && (
+              <div className="flex flex-wrap items-center gap-1.5 mb-5">
+                {product.targetAge && (
+                  <span className="bg-navy/5 text-navy/60 text-[11px] font-medium px-2.5 py-1 rounded-full">
+                    👤 {product.targetAge === 'Tous âges' ? 'Tous âges' : `${product.targetAge} ans`}
+                  </span>
+                )}
+                {product.style?.map((tag) => (
+                  <span key={tag} className="bg-gold/10 text-gold-dark text-[11px] font-medium px-2.5 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {/* ═══ PYRAMID OF NOTES ═══ */}
             <div className="mb-6">
