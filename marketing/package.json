@@ -1,0 +1,15 @@
+{
+  "name": "scentora-marketing",
+  "private": true,
+  "type": "module",
+  "description": "Génère le spot publicitaire Scentora (1080x1920, 30 s) : montage animé + musique libre de droits.",
+  "scripts": {
+    "render": "node render.mjs",
+    "snapshot": "node snapshot.mjs"
+  },
+  "devDependencies": {
+    "@ffmpeg-installer/linux-x64": "^4.1.0",
+    "@sparticuz/chromium": "^153.0.0",
+    "puppeteer-core": "^24.0.0"
+  }
+}

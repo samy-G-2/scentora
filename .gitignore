@@ -1,1 +1,4 @@
 node_modules/
+
+# Rendu vidéo (images intermédiaires + master)
+out/

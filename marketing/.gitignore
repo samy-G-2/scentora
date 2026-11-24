@@ -1,0 +1,3 @@
+# vidéos générées (trop lourdes pour Git)
+video/*.mp4
+video/*.mp3
