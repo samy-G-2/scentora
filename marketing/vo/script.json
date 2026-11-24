@@ -1,0 +1,17 @@
+{
+  "voice": "voice-00",
+  "segments": [
+    { "file": "vo-01.mp3", "start": 0.55, "tempo": 1.0,  "text": "Scentora. L'Orient, dans un flacon." },
+    { "file": "vo-05.mp3", "start": 12.35, "tempo": 1.15, "text": "Tenue douze heures. Sillage XXL." },
+    { "file": "vo-06.mp3", "start": 15.55, "tempo": 1.30, "text": "Yara : floral, gourmand, irrésistible." },
+    { "file": "vo-07.mp3", "start": 19.15, "tempo": 1.15, "text": "Livraison dans les cinquante-huit wilayas. Paiement à la livraison." },
+    { "file": "vo-10.mp3", "start": 27.35, "tempo": 1.25, "text": "Scentora. Commande maintenant sur WhatsApp." }
+  ],
+  "reserve": {
+    "vo-02.mp3": "Khamrah de Lattafa : cannelle, vanille, dattes. Un sillage qui ne s'oublie pas. (7,6 s — trop long pour le carton héros 3,6 s)",
+    "vo-03.mp3": "Tu ne sais pas quel parfum choisir ? Quatre questions, et on trouve le tien. (4,7 s)",
+    "vo-04.mp3": "Asad, 9PM, Club de Nuit : nos best-sellers, jusqu'à 24 % moins cher. (8,1 s — trop long)",
+    "vo-08.mp3": "Cent pour cent authentique. Flacons scellés, hologramme vérifié. (4,8 s)",
+    "vo-09.mp3": "Déjà plus de 1 200 clients conquis. (3,3 s)"
+  }
+}

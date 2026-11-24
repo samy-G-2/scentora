@@ -8,9 +8,10 @@ tiers → zéro problème de droits, monetisation OK).
 
 | Fichier | Usage |
 | --- | --- |
-| `scentora-pub-1080x1920.mp4` | **Master** — Reels, TikTok, YouTube Shorts, Stories |
-| `scentora-pub-1080x1080.mp4` | Recadrage carré (feed Instagram / Facebook) |
-| `scentora-soundtrack.mp3` | La musique seule (30 s) |
+| `scentora-pub-vo-1080x1920.mp4` | **Version avec voix off** — Reels, TikTok, Shorts, Stories |
+| `scentora-pub-1080x1920.mp4` | Version **musique seule** (idéale pour poster avec un son tendance de la plateforme) |
+| `scentora-pub-vo-1080x1080.mp4` / `scentora-pub-1080x1080.mp4` | Recadrages carrés (feed Instagram / Facebook) |
+| `scentora-soundtrack-vo.mp3` / `scentora-soundtrack.mp3` | La bande son seule (avec / sans voix) |
 
 ## Storyboard (30 s)
 
@@ -40,6 +41,18 @@ Amapiano / pop moderne **120 BPM** en La majeur, synthétisée note par note
 - nappes de pads, hook de cloches avec delay, risers, whooshes, impacts
 - intro riser + drop à 4 s, break « cute » à 20 s, final large à 28 s
 - masterisé : compression + limiteur, ≈ −11,6 LUFS intégré (niveau réseaux sociaux)
+
+## Voix off (optionnelle)
+
+`marketing/vo/script.json` décrit les 5 répliques placées dans le spot
+(intro, performance, Yara, livraison, CTA final) avec leur point d'entrée et leur tempo.
+`node mix.mjs` nettoie chaque prise (silences coupés, compression, fondu), les place,
+puis applique un **ducking** : la musique baisse automatiquement sous la voix (sidechain),
+le tout normalisé à −14 LUFS.
+
+Les répliques trop longues pour leur carton (« Khamrah… », « Asad, 9PM… », « 1 200 clients… »)
+sont conservées dans `marketing/vo/` et notées dans `script.json > reserve` : avec une voix
+plus rapide, on peut les intégrer pour une version « tout commenté ».
 
 ## Régénérer / personnaliser
 
