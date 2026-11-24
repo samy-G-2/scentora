@@ -22,6 +22,16 @@
        background: linear-gradient(100deg,#B78A24,#FFF6D8 40%,#D4AF37 75%,#8E6612);
        -webkit-background-clip:text; background-clip:text; color:transparent; }
   .sub { color: rgba(251,248,241,.65); font-size:14px; letter-spacing:.22em; text-transform:uppercase; }
+  .qrcard {
+    display:flex; align-items:center; gap:26px; margin: 0 0 34px; padding: 22px;
+    border-radius: 22px; background: rgba(255,255,255,.055);
+    border:1px solid rgba(212,175,55,.38);
+  }
+  .qrcard img { width: 190px; height: 190px; border-radius: 14px; background:#fff; padding:8px; flex: 0 0 auto; }
+  .qrcard h2 { margin:0 0 8px; font-size: 19px; letter-spacing:.02em; }
+  .qrcard p { margin:0 0 6px; font-size: 13.5px; line-height:1.6; color: rgba(251,248,241,.68); }
+  .qrcard .url { color: var(--gold-l); font-size:12px; letter-spacing:.06em; text-transform:uppercase; }
+  @media (max-width: 620px) { .qrcard { flex-direction: column; text-align: center; } }
   .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
   .card {
     background: rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14);
@@ -58,9 +68,19 @@
     <div class="sub">Spot publicitaire · 30 s · 1080×1920</div>
   </header>
 
+  <section class="qrcard">
+    <img src="qr/qr-telechargement.png" alt="QR code de cette page" />
+    <div>
+      <h2>Ouvre cette page sur ton téléphone</h2>
+      <p>Scanne le QR code avec l'appareil photo → la page s'ouvre sur ton mobile,
+         puis tu appuies sur « Télécharger ».</p>
+      <p class="url">qr-carte-scentora.png · prêt à imprimer ou à poster</p>
+    </div>
+  </section>
+
   <div class="grid">
     <div class="card">
-      <video src="../video/Scentora-Pub.mp4" controls preload="metadata" playsinline></video>
+      <video src="../video/Scentora-Pub.mp4" poster="../video/poster-hero.jpg" controls preload="metadata" playsinline></video>
       <div class="meta">
         <b>Version légère · 4,6 Mo</b>
         1080×1920 · 30 s · musique + voix off<br />
@@ -72,7 +92,7 @@
     </div>
 
     <div class="card hd">
-      <video src="../video/scentora-pub-vo-1080x1920.mp4" controls preload="metadata" playsinline></video>
+      <video src="../video/scentora-pub-vo-1080x1920.mp4" poster="../video/poster-yara.jpg" controls preload="metadata" playsinline></video>
       <div class="meta">
         <b>Version HD <span class="tag">MAX</span></b>
         1080×1920 · 30 s · 11,6 Mo<br />
@@ -94,6 +114,8 @@
   </div>
 
   <footer>
+    <a href="qr/qr-carte-scentora.png" download="Scentora-QR.png" style="color:#F2DE9B">⬇ Télécharger la carte QR</a>
+    &nbsp;·&nbsp; <a href="video/Scentora-Pub.zip" download style="color:#F2DE9B">⬇ Tout en ZIP</a><br /><br />
     Musique originale synthétisée · libre de droits — aucun sample tiers.<br />
     Pense à vérifier les prix, le numéro WhatsApp et les chiffres d'avis avant diffusion.
   </footer>
