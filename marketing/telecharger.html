@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Scentora — Télécharger la pub</title>
+<style>
+  :root { --gold:#D4AF37; --gold-l:#F2DE9B; --ink:#061224; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; min-height:100vh; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    color:#FBF8F1; background:
+      radial-gradient(900px 700px at 15% 0%, rgba(212,175,55,.22), transparent 60%),
+      radial-gradient(700px 600px at 100% 100%, rgba(212,175,55,.13), transparent 60%),
+      linear-gradient(160deg, #081C3A 0%, #061224 55%, #030A14 100%);
+    padding: 40px 20px 80px;
+  }
+  .wrap { max-width: 1000px; margin: 0 auto; }
+  header { text-align:center; margin-bottom: 38px; }
+  .mark { width:44px; height:44px; margin:0 auto 14px; border:3px solid var(--gold); transform:rotate(45deg); border-radius:6px; box-shadow:0 0 26px rgba(212,175,55,.45); }
+  h1 { font-size: clamp(26px, 5vw, 40px); letter-spacing:.14em; margin:0 0 8px;
+       background: linear-gradient(100deg,#B78A24,#FFF6D8 40%,#D4AF37 75%,#8E6612);
+       -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { color: rgba(251,248,241,.65); font-size:14px; letter-spacing:.22em; text-transform:uppercase; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+  .card {
+    background: rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.14);
+    border-radius: 22px; padding: 18px; backdrop-filter: blur(14px);
+    display:flex; flex-direction:column; gap:14px; transition: transform .25s, border-color .25s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,.55); }
+  .card.hd { border-color: rgba(212,175,55,.45); box-shadow: 0 0 0 1px rgba(212,175,55,.15) inset; }
+  video { width:100%; border-radius:14px; background:#000; display:block; max-height: 420px; object-fit: contain; }
+  .meta { font-size:13px; color: rgba(251,248,241,.6); line-height:1.55; }
+  .meta b { color:#FBF8F1; font-size:16px; display:block; margin-bottom:4px; letter-spacing:.02em; }
+  .tag { display:inline-block; font-size:10.5px; letter-spacing:.14em; padding:4px 9px; border-radius:999px;
+         background: rgba(212,175,55,.16); color: var(--gold-l); border:1px solid rgba(212,175,55,.4); margin-left:6px; vertical-align:2px; }
+  .btn {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    text-decoration:none; font-weight:800; font-size:15px; letter-spacing:.06em;
+    padding: 15px 20px; border-radius: 999px; color:#20180A; text-align:center;
+    background: linear-gradient(100deg,#B8890F,#F6E39B 45%,#D4AF37 78%,#A87E14);
+    box-shadow: 0 12px 30px rgba(212,175,55,.28);
+    transition: transform .18s, box-shadow .18s;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(212,175,55,.42); }
+  .btn.ghost { background: rgba(255,255,255,.08); color:#FBF8F1; border:1px solid rgba(255,255,255,.22); box-shadow:none; font-weight:700; }
+  footer { margin-top: 44px; text-align:center; font-size:12.5px; color: rgba(251,248,241,.45); line-height:1.7; }
+  .help { margin-top: 26px; padding: 16px 20px; border-radius:16px; font-size:13px; line-height:1.6;
+          background: rgba(255,255,255,.05); border:1px dashed rgba(255,255,255,.18); color: rgba(251,248,241,.72); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark"></div>
+    <h1>SCENTORA</h1>
+    <div class="sub">Spot publicitaire · 30 s · 1080×1920</div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <video src="../video/Scentora-Pub.mp4" controls preload="metadata" playsinline></video>
+      <div class="meta">
+        <b>Version légère · 4,6 Mo</b>
+        1080×1920 · 30 s · musique + voix off<br />
+        Idéale pour WhatsApp, e-mail, partage rapide.
+      </div>
+      <a class="btn" href="../video/Scentora-Pub.mp4" download="Scentora-Pub.mp4">
+        ⬇ Télécharger le MP4
+      </a>
+    </div>
+
+    <div class="card hd">
+      <video src="../video/scentora-pub-vo-1080x1920.mp4" controls preload="metadata" playsinline></video>
+      <div class="meta">
+        <b>Version HD <span class="tag">MAX</span></b>
+        1080×1920 · 30 s · 11,6 Mo<br />
+        Qualité maximale pour Reels, TikTok, Shorts.
+      </div>
+      <a class="btn" href="../video/scentora-pub-vo-1080x1920.mp4" download="Scentora-Pub-HD.mp4">
+        ⬇ Télécharger la HD
+      </a>
+      <a class="btn ghost" href="../video/scentora-pub-vo-1080x1080.mp4" download="Scentora-Pub-carre.mp4">
+        ⬇ Version carrée (feed Instagram)
+      </a>
+    </div>
+  </div>
+
+  <div class="help">
+    <b>Comment récupérer le fichier :</b> clique sur un bouton « Télécharger » ci-dessus.
+    Sur téléphone, le fichier part dans tes <i>Téléchargements</i> (ou dans l'app Fichiers / Photos).
+    Si l'aperçu ne se lance pas, le téléchargement fonctionne quand même.
+  </div>
+
+  <footer>
+    Musique originale synthétisée · libre de droits — aucun sample tiers.<br />
+    Pense à vérifier les prix, le numéro WhatsApp et les chiffres d'avis avant diffusion.
+  </footer>
+</div>
+</body>
+</html>
